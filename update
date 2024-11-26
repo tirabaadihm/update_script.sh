@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# از کاربر سوال می‌پرسد که آیا می‌خواهد آپدیت و آپگرید انجام دهد
+echo "آیا می‌خواهید آپدیت و آپگرید انجام دهید؟ (y/n)"
+read answer
+
+if [ "$answer" == "y" ]; then
+    echo "در حال انجام آپدیت و آپگرید..."
+    sudo apt update && sudo apt upgrade -y
+elif [ "$answer" == "n" ]; then
+    echo "اسکریپت متوقف شد."
+    exit 0
+else
+    echo "لطفا 'y' یا 'n' وارد کنید."
+    exit 1
+fi
